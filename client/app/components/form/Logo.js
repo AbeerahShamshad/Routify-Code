@@ -5,7 +5,7 @@ import { StyleSheet, Image } from 'react-native'
 export default function Logo() {
     return (
         <Image
-            source={require('C:\\Users\\3tee\\Desktop\\Routify\\client\\app\\assets\\routifyf.png')}
+            source={require('C:\\Users\\3tee\\Desktop\\Routify\\Routify-Code\\client\\app\\assets\\routifyf.png')}
             style={styles.logo}
             resizeMode='contain'
         />
