@@ -5,7 +5,7 @@ import { StyleSheet, Image } from 'react-native'
 export default function Logo() {
     return (
         <Image
-            source={require('C:\\Users\\3tee\\Desktop\\Routify\\Routify-Code\\client\\app\\assets\\routifyf.png')}
+            source={require('C:\\Users\\3tee\\Desktop\\Routify-Code\\client\\app\\assets\\routifyf.png')}
             style={styles.logo}
             resizeMode='contain'
         />
@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
         width: 250,
         height: 180,
         marginLeft: 56,
-        marginBottom:80
-        
+        marginBottom: 80
+
     },
 
 
