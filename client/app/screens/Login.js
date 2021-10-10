@@ -8,7 +8,7 @@ import H3 from '../components/text/H2';
 import { authStyle } from '../config/styles';
 import FormField from '../components/form/FormField';
 import Form from '../components/form/Form';
-import SubmitButton from '../components/form/SubmitButton';
+import EventButton from '../components/form/EventButton';
 import * as Yup from "yup";
 import axios from 'axios';
 import environment from '../environment/environment';
@@ -41,7 +41,7 @@ export default function Login({ navigation }) {
             setError(false)
         } catch (err) {
             console.log(err.response)
-            if (err.response.data.message){
+            if (err.response.data.message) {
                 setError(err.response.data.message)
             }
 
@@ -53,9 +53,9 @@ export default function Login({ navigation }) {
     return (
         <KeyboardAvoidingView style={authStyle.container}>
             <View style={authStyle.logo}>
-            
-                <Logo/>
-       
+
+                <Logo />
+
             </View>
             <Form
                 initialValues={{ email: "", password: "" }}
@@ -64,13 +64,13 @@ export default function Login({ navigation }) {
             >
                 <View style={authStyle.formContainer}>
 
-                
+
                     <FormField
                         placeholder='Enter your email'
                         inputContainerStyle={[authStyle.input, { marginBottom: 5 }]}
                         name='email'
                     />
-                  
+
                     <FormField
                         placeholder='Enter your password'
                         inputContainerStyle={authStyle.input}
@@ -78,7 +78,7 @@ export default function Login({ navigation }) {
                         name='password'
                     />
                     <ErrorMessage visible={error} error={error} />
-                   
+
                 </View>
 
                 <View style={authStyle.registerBtn}>
@@ -87,10 +87,10 @@ export default function Login({ navigation }) {
                     </TouchableWithoutFeedback>
                         <TouchableWithoutFeedback onPress={navigateToForget}>
                             <AppText
-                                style={{ alignSelf: 'flex-end', marginRight: 30 }}>Forgot password?</AppText>
+                                style={{ alignSelf: 'flex-end', marginRight: 30 }}>Forget password?</AppText>
                         </TouchableWithoutFeedback>
                     </AppText>
-                    {!loading ? <SubmitButton title='Login' /> : <ActivityIndicator color={Colors.primary} />}
+                    {!loading ? <EventButton title='Login' /> : <ActivityIndicator color={Colors.primary} />}
                 </View>
             </Form>
         </KeyboardAvoidingView>

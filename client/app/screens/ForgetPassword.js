@@ -7,7 +7,7 @@ import AppText from '../components/text/AppText';
 import { authStyle } from '../config/styles';
 import FormField from '../components/form/FormField';
 import Form from '../components/form/Form';
-import SubmitButton from '../components/form/SubmitButton';
+import EventButton from '../components/form/EventButton';
 import * as Yup from "yup";
 import axios from 'axios';
 import env from '../environment/environment';
@@ -44,7 +44,7 @@ export default function ForgetPassword({ navigation }) {
     return (
         <Screen style={authStyle.container}>
             <Form
-                initialValues={{ email: "azhaarkhan97@gmail.com" }}
+                initialValues={{ email: "abeerahshamshad2@gmail.com" }}
                 onSubmit={handleSubmit}
                 validationSchema={validationSchema}
             >
@@ -60,7 +60,7 @@ export default function ForgetPassword({ navigation }) {
                 </View>
 
                 <View style={authStyle.registerBtn}>
-                    {!loading ? <SubmitButton title='Submit' /> : <ActivityIndicator color={Colors.primary} />}
+                    {!loading ? <EventButton title='Submit' /> : <ActivityIndicator color={Colors.primary} />}
                 </View>
             </Form>
 

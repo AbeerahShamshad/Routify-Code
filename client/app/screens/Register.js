@@ -9,7 +9,7 @@ import H3 from '../components/text/H2';
 import { authStyle } from '../config/styles';
 import FormField from '../components/form/FormField';
 import Form from '../components/form/Form';
-import SubmitButton from '../components/form/SubmitButton';
+import EventButton from '../components/form/EventButton';
 import * as Yup from "yup";
 import axios from 'axios';
 import environment from '../environment/environment';
@@ -96,7 +96,7 @@ export default function Register({ navigation }) {
                         </AppText>
                     </TouchableWithoutFeedback>
                     </AppText>
-                    {!loading ? <SubmitButton title='Register' /> : <ActivityIndicator color={Colors.primary} />}
+                    {!loading ? <EventButton title='Register' /> : <ActivityIndicator color={Colors.primary} />}
                 </View>
             </Form>
         </KeyboardAvoidingView>

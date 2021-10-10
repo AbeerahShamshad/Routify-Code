@@ -9,7 +9,7 @@ import AppText from '../components/text/AppText';
 import { authStyle } from '../config/styles';
 import FormField from '../components/form/FormField';
 import Form from '../components/form/Form';
-import SubmitButton from '../components/form/SubmitButton';
+import EventButton from '../components/form/EventButton';
 import * as Yup from "yup";
 import ErrorMessage from '../components/form/ErrorMessage';
 import Colors from '../config/Colors';
@@ -76,7 +76,7 @@ export default function OtpCode({ navigation }) {
                 </View>
 
                 <View style={authStyle.registerBtn}>
-                    {!loading ? <SubmitButton title='Submit' /> : <ActivityIndicator color={Colors.primary} />}
+                    {!loading ? <EventButton title='Submit' /> : <ActivityIndicator color={Colors.primary} />}
                 </View>
             </Form>
         </Screen>

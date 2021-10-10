@@ -6,7 +6,8 @@ import AppText from './text/AppText';
 function AppButton({ title, onPress, width = '98%', backgroundColor = Colors.primary, buttonFontStyle, style }) {
     return (
 
-        <TouchableOpacity style={[styles.container, { width, backgroundColor }, style]} onPress={onPress} >
+        <TouchableOpacity 
+        style={[styles.container, { width, backgroundColor }, style]} onPress={onPress} >
             <AppText style={[{ color: 'white' }, buttonFontStyle,]}>
                 {title}
             </AppText>
