@@ -42,8 +42,8 @@ export default function OtpCode({ navigation }) {
             ])
             console.log('res:', res)
         } catch (err) {
-            console.log('err:', err.response)
-            setError(err.response.data.message);
+            // console.log('err:', err.response)
+            // setError(err.response.data.message);
         } finally {
             setLoading(false)
         }

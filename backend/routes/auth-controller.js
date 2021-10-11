@@ -146,7 +146,7 @@ app.post("/forget-password", (req, res, next) => {
                     otp: otp
                 }).then((doc) => {
                     client.sendEmail({
-                        "From": 'info@envycle.com',
+                        "From": 'support@routifyy.info',
                         "To": req.body.email,
                         "Subject": "Reset your password",
                         "TextBody": `Here is your pasword reset code: ${otp}`
@@ -204,12 +204,12 @@ app.post("/forget-password-step-2", (req, res, next) => {
 
 
                             const now = new Date().getTime();
-                            const otpIat = new Date(otpData.createdOn).getTime(); // 2021-01-06T13:08:33.657+0000
-                            const diff = now - otpIat; // 300000 5 minute
+                            const otpIat = new Date(otpData.createdOn).getTime(); 
+                            const diff = now - otpIat; 
 
                             console.log("diff: ", diff);
 
-                            if (otpData.otp === req.body.otp && diff < 300000) { // correct otp code
+                            if (otpData.otp === req.body.otp && diff < 300000) { 
                                 otpData.remove()
                                 bcrypt.stringToHash(req.body.newPassword).then(function (hash) {
                                     user.update({ password: hash }, {}, function (err, data) {
@@ -233,7 +233,7 @@ app.post("/forget-password-step-2", (req, res, next) => {
 
             } else {
                 res.status(403).send({
-                    message: "user not found"
+                    message: "Invalid"
                 });
             }
         });

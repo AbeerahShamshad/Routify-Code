@@ -35,7 +35,7 @@ export default function ForgetPassword({ navigation }) {
             setError(false)
             setForgetEmail(email)
         } catch (err) {
-            setError(err.response.data.message);
+            // setError(err.response.data.message);
         } finally {
             setLoading(false)
         }

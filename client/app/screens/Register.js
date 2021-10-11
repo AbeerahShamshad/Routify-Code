@@ -44,9 +44,9 @@ export default function Register({ navigation }) {
                 { text: 'Go Back To Login', onPress: () => navigation.navigate('Login') },
             ])
         } catch (err) {
-            if (err.response.data.message) {
-                setError(err.response.data.message);
-            }
+            // if (err.response.data.message) {
+            //     setError(err.response.data.message);
+            // }
         } finally {
             setLoading(false);
         }

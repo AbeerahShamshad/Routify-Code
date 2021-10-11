@@ -31,10 +31,6 @@ const userSchema = new mongoose.Schema({
     email: String,
     password: String,
     role: String,
-    // phoneNumber: String,
-    // age: String,
-    // gender: String,
-    profilePicture: String,
 });
 
 const otpSchema = new mongoose.Schema({
