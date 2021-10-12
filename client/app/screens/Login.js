@@ -35,15 +35,15 @@ export default function Login({ navigation }) {
         try {
             await axios.post(`${environment.baseUrl}/auth/login`, {
                 email: email.toLowerCase(),
-                password: password.toLowerCase(),
+                password: password,
             });
             setChange(!change)
             setError(false)
         } catch (err) {
-            // console.log(err.response)
-            // if (err.response.data.message) {
-            //     setError(err.response.data.message)
-            // }
+            console.log(err.response)
+            if (err.response.data.message) {
+                setError(err.response.data.message)
+            }
 
         } finally {
             setLoading(false);

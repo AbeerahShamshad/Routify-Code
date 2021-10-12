@@ -24,10 +24,10 @@ export default function App() {
     await axios.post(`${env.baseUrl}/logout`);
     setUser(false)
   }
-  
+
   useEffect(() => {
-    // getProfile();
-    logout();
+    getProfile();
+    // logout();
     // login();
   }, [change]);
 

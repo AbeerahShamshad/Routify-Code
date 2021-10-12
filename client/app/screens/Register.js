@@ -32,6 +32,7 @@ export default function Register({ navigation }) {
 
 
     const handleSubmit = async ({ username, email, password }) => {
+        console.log('hello')
         setLoading(true);
         try {
             let res = await axios.post(`${environment.baseUrl}/auth/signup`, {
@@ -44,9 +45,10 @@ export default function Register({ navigation }) {
                 { text: 'Go Back To Login', onPress: () => navigation.navigate('Login') },
             ])
         } catch (err) {
-            // if (err.response.data.message) {
-            //     setError(err.response.data.message);
-            // }
+            console.log('hello', err.response)
+            if (err.response.data.message) {
+                setError(err.response.data.message);
+            }
         } finally {
             setLoading(false);
         }
@@ -57,7 +59,7 @@ export default function Register({ navigation }) {
     return (
         <KeyboardAvoidingView style={authStyle.container}>
             <View style={authStyle.headerContainer}>
-                <Logo/>
+                <Logo />
             </View>
             <Form
                 initialValues={{ username: "", email: "", password: "" }}
@@ -65,19 +67,19 @@ export default function Register({ navigation }) {
                 validationSchema={validationSchema}
             >
                 <View style={authStyle.formContainer}>
-                  
+
                     <FormField
                         placeholder='Enter your username'
                         inputContainerStyle={authStyle.input}
                         name='username'
                     />
-                    
+
                     <FormField
                         placeholder='Enter your email'
                         inputContainerStyle={[authStyle.input, { marginBottom: 5 }]}
                         name='email'
                     />
-                   
+
                     <FormField
                         placeholder='Enter your password'
                         inputContainerStyle={authStyle.input}
